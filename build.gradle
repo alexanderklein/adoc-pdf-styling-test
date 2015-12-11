@@ -9,12 +9,6 @@ buildscript {
   }
 }
 
-task debug {
-  doLast {
-    println asciidoctor.outputDir
-  }
-}
-
 apply plugin: 'org.asciidoctor.convert'
 asciidoctor {
   backends = ['pdf']
