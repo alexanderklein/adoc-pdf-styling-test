@@ -5,7 +5,7 @@ buildscript {
 
   dependencies {
     classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
-      classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.10'
+    classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.10.1'
   }
 }
 
@@ -18,7 +18,9 @@ task debug {
 apply plugin: 'org.asciidoctor.convert'
 asciidoctor {
   backends = ['pdf']
-    attributes 'source-highlighter': 'coderay', 'pdf-fontsdir': '/Users/aklein/dev/adoc/pdf/src/resources/fonts', 'pdf-style': '/Users/aklein/dev/adoc/pdf/src/resources/themes/basic-theme.yml'
+    attributes 'source-highlighter': 'coderay',
+    'pdf-fontsdir': file('src/resources/fonts'),
+    'pdf-style': file('src/resources/themes/basic-theme.yml')
 }
 
 task wrapper(type: Wrapper) {
